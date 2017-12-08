@@ -1,0 +1,9 @@
+#! /bin/bash
+
+MAX_WORKSPACE=10
+ACTUAL_WORKSPACE=$(get_workspace.sh)
+
+NEW_WORKSPACE=$(($(($(($ACTUAL_WORKSPACE $1 1 - 1 + $MAX_WORKSPACE)) % $MAX_WORKSPACE)) + 1))
+
+echo $NEW_WORKSPACE
+
